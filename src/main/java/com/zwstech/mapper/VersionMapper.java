@@ -28,4 +28,8 @@ public interface VersionMapper {
     })
     @Select("SELECT * FROM VERSION where app_num = #{appNum}")
     List<Version> findByAppNum(@Param("appNum") int appNum);
+
+    @Select("SELECT * FROM VERSION WHERE id = #{id}")
+    Version getVersionById(@Param("id") int id);
+
 }

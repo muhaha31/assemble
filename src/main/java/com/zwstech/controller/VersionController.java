@@ -23,10 +23,17 @@ public class VersionController {
         @Autowired
         private VersionMapper versionMapper;
 
-        @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-        public DataWrapper<List<Version>> getVersionByAppNum(@PathVariable int id){
-            return new DataWrapper<>(versionMapper.findByAppNum(id));
+        @RequestMapping(value = "/all/{appid}", method = RequestMethod.GET)
+        public DataWrapper<List<Version>> getVersionByAppNum(@PathVariable int appid){
+            return new DataWrapper<>(versionMapper.findByAppNum(appid));
         }
+
+        @RequestMapping(value = "/{id}", method =  RequestMethod.GET)
+        public DataWrapper<Version> getVErsionById(@PathVariable int id){
+                return new DataWrapper<>(versionMapper.getVersionById(id));
+        }
+
+
 
         @RequestMapping("/json")
         public String json() throws Exception{

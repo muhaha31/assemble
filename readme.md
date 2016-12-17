@@ -1,1 +1,1 @@
-DOCKER_HOST=unix:///var/run/docker.sock
+macOS DOCKER_HOST=unix:///var/run/docker.sock
