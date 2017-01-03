@@ -26,9 +26,21 @@ public interface VersionMapper {
             @Result(property = "version", column = "version"),
             @Result(property = "createTime", column = "create_time")
     })
-    @Select("SELECT * FROM VERSION where app_num = #{appNum}")
+    @Select("SELECT * FROM VERSION where app_num = #{appNum} order by create_time desc")
     List<Version> findByAppNum(@Param("appNum") int appNum);
 
+
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "appNum", column = "app_num"),
+            @Result(property = "name", column = "name"),
+            @Result(property = "apkName", column = "apk_name"),
+            @Result(property = "path", column = "path"),
+            @Result(property = "size", column = "size"),
+            @Result(property = "flavor", column = "flavor"),
+            @Result(property = "version", column = "version"),
+            @Result(property = "createTime", column = "create_time")
+    })
     @Select("SELECT * FROM VERSION WHERE id = #{id}")
     Version getVersionById(@Param("id") int id);
 
