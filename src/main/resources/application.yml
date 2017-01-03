@@ -1,9 +1,0 @@
-spring:
-  datasource:
-    name: zws_android
-    url: jdbc:mysql://192.168.25.88:3306/zws_android?useSSL=false
-    username: zws_androiduser
-    password: androiduser
-    driver-class-name: com.mysql.jdbc.Driver
-
-
